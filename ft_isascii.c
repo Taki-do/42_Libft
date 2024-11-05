@@ -6,7 +6,7 @@
 /*   By: taomalbe <taomalbe@student.42perpignan.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/25 19:04:39 by taomalbe          #+#    #+#             */
-/*   Updated: 2024/10/25 19:09:36 by taomalbe         ###   ########.fr       */
+/*   Updated: 2024/11/04 22:06:21 by taomalbe         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 int	ft_isascii(int c)
 {
-	if (c >= 32 && c <= 127)
+	if (c >= 0 && c <= 127)
 		return (1);
 	return (0);
 }

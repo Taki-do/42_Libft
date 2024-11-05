@@ -6,7 +6,7 @@
 /*   By: taomalbe <taomalbe@student.42perpignan.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/25 18:35:55 by taomalbe          #+#    #+#             */
-/*   Updated: 2024/10/25 18:41:26 by taomalbe         ###   ########.fr       */
+/*   Updated: 2024/11/04 22:17:06 by taomalbe         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,7 @@ int	ft_atoi(const char *nptr)
 	i = 0;
 	res = 0;
 	signe = 1;
-	while ((nptr[i] >= 7 && nptr[i] <= 13) || (nptr[i] == ' '))
+	while ((nptr[i] >= 9 && nptr[i] <= 13) || (nptr[i] == ' '))
 		i++;
 	if (nptr[i] == '+' || nptr[i] == '-')
 	{

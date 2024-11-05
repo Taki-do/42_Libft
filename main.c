@@ -1,26 +1,30 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strchr.c                                        :+:      :+:    :+:   */
+/*   main.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: taomalbe <taomalbe@student.42perpignan.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/10/25 17:17:44 by taomalbe          #+#    #+#             */
-/*   Updated: 2024/11/04 23:54:17 by taomalbe         ###   ########.fr       */
+/*   Created: 2024/11/04 23:02:24 by taomalbe          #+#    #+#             */
+/*   Updated: 2024/11/05 00:17:56 by taomalbe         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
+#include <stdio.h>
 
-char	*ft_strchr(const char *s, int c)
+int	main(void)
 {
-	while (*s)
+	int		i;
+	char	**split;
+
+	i = 0;
+	split = ft_split("apac agag", 'c');
+	while (split[i])
 	{
-		if (*s == (char)c)
-			return ((char *)s);
-		s++;
+		printf("%s\n", split[i]);
+		free(split[i]);
+		i++;
 	}
-	if ((char)c == '\0')
-		return ((char *)s);
-	return (NULL);
+	free(split);
 }

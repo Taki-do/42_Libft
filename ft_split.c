@@ -6,7 +6,7 @@
 /*   By: taomalbe <taomalbe@student.42perpignan.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/29 17:50:49 by taomalbe          #+#    #+#             */
-/*   Updated: 2024/10/29 18:09:35 by taomalbe         ###   ########.fr       */
+/*   Updated: 2024/11/05 00:33:40 by taomalbe         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -50,7 +50,7 @@ char	**ft_split(char const *s, char c)
 
 	i = 0;
 	j = 0;
-	split = (char **)malloc(ft_countwords(s, c) * sizeof(char *));
+	split = (char **)malloc((ft_countwords(s, c) + 1) * sizeof(char *));
 	if (!split)
 		return (NULL);
 	while (s[i] && j < ft_countwords(s, c))
@@ -62,6 +62,7 @@ char	**ft_split(char const *s, char c)
 		if (!split[j])
 			return (NULL);
 		ft_strncpy(split[j], s + i, len);
+		split[j][len] = '\0';
 		i += len;
 		j++;
 	}

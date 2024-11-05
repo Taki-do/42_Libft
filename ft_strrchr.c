@@ -6,7 +6,7 @@
 /*   By: taomalbe <taomalbe@student.42perpignan.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/25 17:36:02 by taomalbe          #+#    #+#             */
-/*   Updated: 2024/10/25 17:52:07 by taomalbe         ###   ########.fr       */
+/*   Updated: 2024/11/04 23:54:38 by taomalbe         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,10 +20,12 @@ char	*ft_strrchr(const char *s, int c)
 	s += len;
 	while (len >= 0)
 	{
-		if (*s == c)
+		if (*s == (char)c)
 			return ((char *)s);
 		s--;
 		len--;
 	}
+	if ((char)c == '\0')
+		return ((char *)s);
 	return (NULL);
 }
