@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_split.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: taomalbe <taomalbe@student.42perpignan.    +#+  +:+       +#+        */
+/*   By: taomalbe <taomalbe@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/29 17:50:49 by taomalbe          #+#    #+#             */
-/*   Updated: 2024/11/05 00:33:40 by taomalbe         ###   ########.fr       */
+/*   Updated: 2024/11/05 13:35:38 by taomalbe         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,6 +41,17 @@ static size_t	ft_wordlen(const char *s, char c)
 	return (i);
 }
 
+static char	**ft_exit(char **split)
+{
+	int	i;
+
+	i = -1;
+	while (split[++i])
+		free(split[i]);
+	free(split);
+	return (NULL);
+}
+
 char	**ft_split(char const *s, char c)
 {
 	size_t	i;
@@ -60,7 +71,7 @@ char	**ft_split(char const *s, char c)
 		len = ft_wordlen(s + i, c);
 		split[j] = (char *)malloc((len + 1) * sizeof(char));
 		if (!split[j])
-			return (NULL);
+			return (ft_exit(split));
 		ft_strncpy(split[j], s + i, len);
 		split[j][len] = '\0';
 		i += len;
